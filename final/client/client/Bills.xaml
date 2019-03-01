@@ -1,0 +1,62 @@
+﻿<Window x:Class="client.Bills"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bills" Height="700" Width="817" Loaded="Window_Loaded" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox Header="Details" Name="groupBox3" Margin="260,8,0,0" Width="275" Height="325" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <DataGrid AutoGenerateColumns="False" Margin="0,0,0,0" Name="grid_fooddetails" />
+        </GroupBox>
+        <GroupBox Header="Food Menu" Name="groupBox2" Margin="537,8,0,0" Width="250" Height="325" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <WrapPanel Margin="0,0,0,0" Name="wpan_allfood"></WrapPanel>
+        </GroupBox>
+        <GroupBox Header="Tables" Name="groupBox1" Margin="8,8,531,330" Width="250" Height="325" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <WrapPanel Name="wPan_Tabels" Margin="0,0,0,0"></WrapPanel>
+        </GroupBox>
+        <GroupBox Header="Add New Table" Height="200" HorizontalAlignment="Left" Margin="8,330,0,0" Name="groupBox4" VerticalAlignment="Top" Width="250">
+            <Grid>
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="111,6,0,0" Name="txt_addtable" VerticalAlignment="Top" Width="108" />
+                <Button Content="Add" Height="23" HorizontalAlignment="Left" Margin="6,64,0,0" Name="btn_addTable" VerticalAlignment="Top" Width="96" Click="btn_addTable_Click" />
+                <Label Content="Table Number" Height="28" HorizontalAlignment="Left" Margin="6,4,0,0" Name="label2" VerticalAlignment="Top" />
+                <Label Content="Captain Name" Height="28" HorizontalAlignment="Left" Margin="6,29,0,0" Name="label3" VerticalAlignment="Top" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="111,32,0,0" Name="cmb_captains" VerticalAlignment="Top" Width="108" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Add New Food To Menu" Height="200" HorizontalAlignment="Left" Margin="537,330,0,0" Name="groupBox5" VerticalAlignment="Top" Width="250">
+            <Grid>
+                <Label Content="Arabic Name" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label5" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="99,9,0,0" Name="txt_arabicName" VerticalAlignment="Top" Width="120" />
+                <Label Content="English Name" Height="28" HorizontalAlignment="Left" Margin="6,31,0,0" Name="label7" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,33,19,0" Name="txt_englishName" VerticalAlignment="Top" Width="120" />
+                <Label Content="Counting Unit" Height="28" HorizontalAlignment="Left" Margin="6,59,0,0" Name="label9" VerticalAlignment="Top" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="99,59,0,0" Name="cmb_countingUnit" VerticalAlignment="Top" Width="120" />
+                <Label Content="Price" Height="28" HorizontalAlignment="Left" Margin="6,83,0,0" Name="label10" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="0,85,19,0" Name="txt_price" VerticalAlignment="Top" Width="120" />
+                <CheckBox Content="Is A Parent" Height="16" HorizontalAlignment="Left" Margin="11,113,0,0" Name="chk_isAParent" VerticalAlignment="Top" FlowDirection="RightToLeft" Checked="chk_isAParent_Checked" Unchecked="chk_isAParent_Unchecked" />
+                <Button Content="Add" Height="23" HorizontalAlignment="Left" Margin="11,140,0,0" Name="btn_food_add" VerticalAlignment="Top" Width="96" Click="btn_food_add_Click" />
+                <Button Content="Clear" Height="23" HorizontalAlignment="Left" Margin="123,140,0,0" Name="btn_food_clear" VerticalAlignment="Top" Width="96" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Saving &amp; Printing" Height="200" HorizontalAlignment="Left" Margin="260,330,0,0" Name="groupBox7" VerticalAlignment="Top" Width="275">
+            <Grid>
+                <Button Content="Save &amp; Print Choosen Bill" Height="23" HorizontalAlignment="Left" Margin="6,138,0,0" Name="btn_saveWithPrint" VerticalAlignment="Top" Width="238" Click="btn_saveWithPrint_Click" />
+                <Button Content="Save Bill Without Print" Height="23" HorizontalAlignment="Left" Margin="6,107,0,0" Name="btn_saveBillNoPrint" VerticalAlignment="Top" Width="238" Click="btn_saveBill_Click" />
+                <Label Content="Tax1 = " Height="28" HorizontalAlignment="Left" Margin="166,19,0,0" Name="label4" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="212,19,0,0" Name="lbl_tax1" VerticalAlignment="Top" />
+                <Label Content="Tax2 = " Height="28" HorizontalAlignment="Left" Margin="166,38,0,0" Name="label6" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="212,38,0,0" Name="lbl_tax2" VerticalAlignment="Top" />
+                <Label Content="Final Total = " Height="28" HorizontalAlignment="Left" Margin="136,73,0,0" Name="label8" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="212,73,0,0" Name="lbl_finalTotal" VerticalAlignment="Top" />
+                <Label Content="Net Total = " Height="28" HorizontalAlignment="Left" Margin="142,0,0,0" Name="label1" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="212,0,0,0" Name="lbl_netTotal" VerticalAlignment="Top" />
+                <Label Content="Discount =" Height="28" HorizontalAlignment="Left" Margin="143,55,0,0" Name="label11" VerticalAlignment="Top" />
+                <TextBox Height="24" HorizontalAlignment="Left" Margin="210,57,0,0" Name="txt_discount" VerticalAlignment="Top" Width="47" Foreground="Red" TextChanged="txt_discount_TextChanged" />
+                <ComboBox Height="23" IsReadOnly="False" HorizontalAlignment="Left" Margin="6,29,0,0" Name="cmb_clients" VerticalAlignment="Top" Width="102" />
+                <Label Content="Client" Height="28" HorizontalAlignment="Left" Margin="4,4,0,0" Name="label12" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Status Messeges" Height="126" HorizontalAlignment="Left" Margin="7,528,0,0" Name="groupBox6" VerticalAlignment="Top" Width="780">
+            <TextBox  Margin="0,0,0,0" Name="txt_message" />
+        </GroupBox>
+        <Button Content="Refresh" Name="btn_refresh" Margin="734,298,16,336" HorizontalAlignment="Left" VerticalAlignment="Top"  Click="btn_refresh_Click" />
+    </Grid>
+</Window>

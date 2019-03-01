@@ -1,0 +1,57 @@
+﻿<Window x:Class="client.CashManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CashManager" Height="683" Width="686" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox Header="Totals" Height="118" HorizontalAlignment="Left" Margin="12,122,0,0" Name="groupBox4" VerticalAlignment="Top" Width="236">
+            <Grid>
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="4,60,0,0" Name="lbl_inMoney" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="64,60,0,0" Name="lbl_outMoney" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="36,23,0,0" Name="lbl_total" VerticalAlignment="Top" />
+                <Label Content="In_Money" Height="28" HorizontalAlignment="Left" Margin="4,42,0,0" Name="label6" VerticalAlignment="Top" />
+                <Label Content="Out_Money" Height="28" HorizontalAlignment="Left" Margin="64,42,0,0" Name="label7" VerticalAlignment="Top" />
+                <Label Content="Total" Height="28" HorizontalAlignment="Left" Margin="36,5,0,0" Name="label8" VerticalAlignment="Top" />
+                <Button Content="Print" Height="25" HorizontalAlignment="Left" Margin="144,65,0,0" Name="btn_print" VerticalAlignment="Top" Width="74" Click="btn_print_Click" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Filters" Height="118" HorizontalAlignment="Left" Margin="254,122,0,0" Name="groupBox2" VerticalAlignment="Top" Width="398">
+            <Grid>
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="288,65,0,0" Name="cmb_user" VerticalAlignment="Top" Width="90" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="194,65,0,0" Name="cmb_transfer" VerticalAlignment="Top" Width="90" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="100,65,0,0" Name="cmb_account" VerticalAlignment="Top" Width="90" />
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="121,6,0,0" Name="date_start" VerticalAlignment="Top" Width="115" />
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="262,6,0,0" Name="date_end" VerticalAlignment="Top" Width="115" />
+                <Label Content="To" Height="28" HorizontalAlignment="Left" Margin="241,5,0,0" Name="label1" VerticalAlignment="Top" />
+                <Label Content="From" Height="28" HorizontalAlignment="Left" Margin="86,5,0,0" Name="label2" VerticalAlignment="Top" />
+                <Label Content="Account" Height="28" HorizontalAlignment="Left" Margin="99,42,0,0" Name="label3" VerticalAlignment="Top" />
+                <Label Content="Transfer" Height="28" HorizontalAlignment="Left" Margin="194,42,0,0" Name="label4" VerticalAlignment="Top" />
+                <Label Content="User" Height="28" HorizontalAlignment="Left" Margin="288,42,0,0" Name="label5" VerticalAlignment="Top" />
+                <Button Content="Get Registers" Height="25" HorizontalAlignment="Left" Margin="6,6,0,0" Name="btn_filter" VerticalAlignment="Top" Width="83" Click="btn_filter_Click" />
+                <Button Content="Clear" Height="25" HorizontalAlignment="Left" Margin="6,63,0,0" Name="btn_clear" VerticalAlignment="Top" Width="83" Click="btn_clear_Click" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Status Messeges" Height="70" HorizontalAlignment="Left" Margin="12,562,0,0" Name="groupBox6" VerticalAlignment="Top" Width="640">
+            <TextBox Margin="0,0,0,0" Name="txt_message" />
+        </GroupBox>
+        <GroupBox Header="Cash Details" Height="329" HorizontalAlignment="Left" Margin="12,236,0,0" Name="groupBox1" VerticalAlignment="Top" Width="640">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True"   Margin="0,0,0,0" Name="dataGrid1"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Add New Reg" Height="120" HorizontalAlignment="Left" Margin="12,3,0,0" Name="groupBox3" VerticalAlignment="Top" Width="640">
+            <Grid>
+                <Button Content="Add" Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="btn_addNewREG" VerticalAlignment="Top" Width="75" Click="btn_addNewREG_Click" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="6,68,0,0" Name="txt_in_money" VerticalAlignment="Top" Width="75" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="87,68,0,0" Name="txt_out_money" VerticalAlignment="Top" Width="75" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="168,68,0,0" Name="cmb_add_account" VerticalAlignment="Top" Width="90" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="436,68,0,0" Name="cmb_add_transfer" VerticalAlignment="Top" Width="90" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="263,68,0,0" Name="txt_explanation" VerticalAlignment="Top" Width="168" />
+                <Label Content="In_Money" Height="28" HorizontalAlignment="Left" Margin="14,42,0,0" Name="label9" VerticalAlignment="Top" />
+                <Label Content="Out_Money" Height="28" HorizontalAlignment="Left" Margin="90,42,0,0" Name="label10" VerticalAlignment="Top" />
+                <Label Content="Account" Height="28" HorizontalAlignment="Left" Margin="185,43,0,0" Name="label11" VerticalAlignment="Top" />
+                <Label Content="Transfer" Height="28" HorizontalAlignment="Left" Margin="452,44,0,0" Name="label12" VerticalAlignment="Top" />
+                <Label Content="Explanation" Height="28" HorizontalAlignment="Left" Margin="311,42,0,0" Name="label13" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

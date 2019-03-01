@@ -1,0 +1,75 @@
+﻿<Window x:Class="client.billsOldShow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="billsOldShow" Height="789" Width="615" Loaded="Window_Loaded" WindowState="Normal" WindowStartupLocation="CenterScreen">
+    <Grid Width="547">
+        <GroupBox Header="OLD Bills" Height="349" HorizontalAlignment="Left" Margin="14,148,0,0" Name="groupBox1" VerticalAlignment="Top" Width="252">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True"   Name="grid_oldbills" SelectionChanged="grid_oldbills_SelectionChanged" SelectionMode="Single" MouseDoubleClick="grid_oldbills_MouseDoubleClick" ToolTip="&quot;Double Click To Print The Bill&quot;" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Bill Details" Height="349" HorizontalAlignment="Left" Margin="270,148,0,0" Name="groupBox2" VerticalAlignment="Top" Width="267">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="grid_billsdetails" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Finance Details" Height="169" Margin="205,503,180,0" Name="groupBox3" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="Bill Net Total" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label1" VerticalAlignment="Top" />
+                <Label Content="Tax1" Height="28" HorizontalAlignment="Left" Margin="6,32,0,0" Name="label2" VerticalAlignment="Top" />
+                <Label Content="Tax2" Height="28" HorizontalAlignment="Left" Margin="6,58,0,0" Name="label3" VerticalAlignment="Top" />
+                <Label Content="Discount" Height="28" HorizontalAlignment="Left" Margin="6,84,0,0" Name="label4" VerticalAlignment="Top" />
+                <Label Content="Bill Final Total" Height="28" HorizontalAlignment="Left" Margin="6,112,0,0" Name="label5" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="100,6,0,0" Name="lbl_NetTotal" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="100,32,0,0" Name="lbl_tax1" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="100,58,0,0" Name="lbl_tax2" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="100,84,0,0" Name="lbl_discount" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="100,112,0,0" Name="lbl_finalTotal" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Details" Height="169" HorizontalAlignment="Left" Margin="14,503,0,0" Name="groupBox4" VerticalAlignment="Top" Width="184">
+            <Grid>
+                <Label Content="Start Date" Height="28" HorizontalAlignment="Left" Margin="6,32,0,0" Name="label6" VerticalAlignment="Top" />
+                <Label Content="End Date" Height="28" HorizontalAlignment="Left" Margin="6,58,0,0" Name="label7" VerticalAlignment="Top" />
+                <Label Content="Captain" Height="28" HorizontalAlignment="Left" Margin="6,0,0,34" Name="label8" VerticalAlignment="Bottom" />
+                <Label Content="Table#" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label9" VerticalAlignment="Top" />
+                <Label Content="Client" Height="28" HorizontalAlignment="Left" Margin="6,112,0,0" Name="label10" VerticalAlignment="Top" />
+                <Label Content="Start Date" Height="28" HorizontalAlignment="Left" Margin="75,32,0,0" Name="lbl_startDate" VerticalAlignment="Top" />
+                <Label Content="End Date" Height="28" HorizontalAlignment="Left" Margin="75,58,0,0" Name="lbl_endDate" VerticalAlignment="Top" />
+                <Label Content="Captain" Height="28" HorizontalAlignment="Left" Margin="75,84,0,0" Name="lbl_captain" VerticalAlignment="Top" />
+                <Label Content="Table#" Height="28" HorizontalAlignment="Left" Margin="75,6,0,0" Name="lbl_table" VerticalAlignment="Top" />
+                <Label Content="Client" Height="28" HorizontalAlignment="Left" Margin="75,112,0,0" Name="lbl_client" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Filters" Height="136" HorizontalAlignment="Left" Margin="14,12,0,0" Name="groupBox5" VerticalAlignment="Top" Width="521">
+            <Grid>
+                <Button Content="All Bills" Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="btn_all" VerticalAlignment="Top" Width="84" Click="btn_all_Click" />
+                <Button Content="By Date" Height="23" HorizontalAlignment="Left" Margin="6,32,0,0" Name="btn_date" VerticalAlignment="Top" Width="84" Click="btn_date_Click" />
+                <Button Content="By Captain" Height="23" HorizontalAlignment="Left" Margin="6,58,0,0" Name="btn_captain" VerticalAlignment="Top" Width="84" Click="btn_captain_Click" />
+                <Label Content="From" Height="28" HorizontalAlignment="Left" Margin="100,30,0,0" Name="label11" VerticalAlignment="Top" />
+                <Label Content="To" Height="28" HorizontalAlignment="Left" Margin="284,30,0,0" Name="label12" VerticalAlignment="Top" />
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="141,31,0,0" Name="datePicker1" VerticalAlignment="Top" Width="115" />
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="313,31,0,0" Name="datePicker2" VerticalAlignment="Top" Width="115" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="141,59,0,0" Name="cmb_captain" VerticalAlignment="Top" Width="115" />
+                <Button Content="By Cap&amp;Date" Height="23" HorizontalAlignment="Left" Margin="6,84,0,0" Name="button1" VerticalAlignment="Top" Width="84" Click="button1_Click" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="All Totals" Height="169" Margin="373,503,10,0" Name="groupBox6" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="Bill Net Total" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label13" VerticalAlignment="Top" />
+                <Label Content="Tax1" Height="28" HorizontalAlignment="Left" Margin="6,32,0,0" Name="label14" VerticalAlignment="Top" />
+                <Label Content="Tax2" Height="28" HorizontalAlignment="Left" Margin="6,58,0,0" Name="label15" VerticalAlignment="Top" />
+                <Label Content="Discount" Height="28" HorizontalAlignment="Left" Margin="6,84,0,0" Name="label16" VerticalAlignment="Top" />
+                <Label Content="Bill Final Total" Height="28" HorizontalAlignment="Left" Margin="6,112,0,0" Name="label17" VerticalAlignment="Top" />
+                <Label Content="0" HorizontalAlignment="Left" Margin="93,6,0,0" Name="lbl_allNet" Height="28" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="93,32,0,0" Name="lbl_allTax1" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="93,58,0,0" Name="lbl_allTax2" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="93,0,0,34" Name="lbl_allDiscount" VerticalAlignment="Bottom" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="93,112,0,0" Name="lbl_allfinal" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Status Messeges" Height="71" HorizontalAlignment="Left" Margin="14,672,0,0" Name="groupBox7" VerticalAlignment="Top" Width="521">
+            <TextBox Margin="0,0,0,0" Name="txt_message" />
+        </GroupBox>
+    </Grid>
+</Window>

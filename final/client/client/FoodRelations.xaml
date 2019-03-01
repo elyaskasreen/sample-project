@@ -1,0 +1,41 @@
+﻿<Window x:Class="client.FoodRelations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FoodRelations" Height="693" Width="881" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox Header="Primary Materials" Height="326"  HorizontalAlignment="Left" Margin="12,8,0,0" Name="groupBox1" VerticalAlignment="Top" Width="260" ToolTip="&quot;Double Click To Add As Ingredients&quot;">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Height="303" HorizontalAlignment="Left" Name="grid_primary" VerticalAlignment="Top" Width="248" MouseDoubleClick="grid_primary_MouseDoubleClick" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Ingredients" Height="326" HorizontalAlignment="Left" Margin="278,8,0,0" Name="groupBox2" VerticalAlignment="Top" Width="300" ToolTip="&quot;Double Click To Delete&quot;">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Height="303" HorizontalAlignment="Left" Name="grid_relations" VerticalAlignment="Top" Width="288" MouseDoubleClick="grid_relations_MouseDoubleClick" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Food Menu" Height="326" HorizontalAlignment="Left" Margin="584,8,0,0" Name="groupBox3" VerticalAlignment="Top" Width="260" ToolTip="&quot;Choose To Show Ingredients&quot;">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Height="303" HorizontalAlignment="Left" Name="grid_foodmenu" VerticalAlignment="Top" Width="248" SelectionChanged="grid_foodmenu_SelectionChanged" />
+            </Grid>
+        </GroupBox>
+        <Label Content="TotalCost" Height="28" HorizontalAlignment="Left" Margin="468,340,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="534,340,0,0" Name="lbl_TotalCost" VerticalAlignment="Top" />
+        <GroupBox Header="Status Messages" Height="144" HorizontalAlignment="Left" Margin="12,498,0,0" Name="groupBox4" VerticalAlignment="Top" Width="832">
+            <Grid>
+                <TextBox Height="121" HorizontalAlignment="Left" Name="txt_message" VerticalAlignment="Top" Width="820" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Add New Primary Material" Height="152" HorizontalAlignment="Left" Margin="12,340,0,0" Name="groupBox5" VerticalAlignment="Top" Width="254">
+            <Grid>
+                <Label Content="Material Name" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label2" VerticalAlignment="Top" />
+                <Label Content="Last Price" Height="28" HorizontalAlignment="Left" Margin="6,58,0,0" Name="label3" VerticalAlignment="Top" />
+                <Label Content="Count Unit" Height="28" HorizontalAlignment="Left" Margin="6,33,0,0" Name="label4" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="100,8,0,0" Name="txt_MaterialName" VerticalAlignment="Top" Width="136" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="100,62,0,0" Name="txt_lastPrice" VerticalAlignment="Top" Width="136" />
+                <Button Content="Add" Height="23" HorizontalAlignment="Left" Margin="11,97,0,0" Name="btn_PM_add" VerticalAlignment="Top" Width="98" Click="btn_PM_add_Click" />
+                <Button Content="Clear" Height="23" HorizontalAlignment="Left" Margin="138,97,0,0" Name="btn_PM_clear" VerticalAlignment="Top" Width="98" Click="btn_PM_clear_Click" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="100,35,0,0" Name="cmb_countingUnit" VerticalAlignment="Top" Width="136" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

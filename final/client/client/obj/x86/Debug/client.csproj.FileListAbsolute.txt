@@ -1,0 +1,53 @@
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\bin\Debug\client.exe
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\bin\Debug\client.pdb
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\obj\x86\Debug\MainWindow.baml
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\obj\x86\Debug\MainWindow.g.cs
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\obj\x86\Debug\App.g.cs
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\obj\x86\Debug\client_MarkupCompile.cache
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\obj\x86\Debug\client.g.resources
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\obj\x86\Debug\client.Properties.Resources.resources
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\obj\x86\Debug\client.csproj.GenerateResource.Cache
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\obj\x86\Debug\client.exe
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\client\client\obj\x86\Debug\client.pdb
+D:\Dropbox\مشروع التخرج\final\client\client\bin\Debug\client.exe.config
+D:\Dropbox\مشروع التخرج\final\client\client\bin\Debug\client.exe
+D:\Dropbox\مشروع التخرج\final\client\client\bin\Debug\client.pdb
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\EmpSettings.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\EmpTimeInOut.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\login.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\MainWindow.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\sendtest.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\Store.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\EmpSettings.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\EmpTimeInOut.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\login.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\MainWindow.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\sendtest.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\Store.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\App.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\client_MarkupCompile.cache
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\client.g.resources
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\client.Properties.Resources.resources
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\client.csproj.GenerateResource.Cache
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\client.exe
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\client.pdb
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\Bills.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\Bills.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\GetValue.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\GetValue.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\BillsPrint.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\BillsPrint.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\billsOldShow.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\billsOldShow.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\Kitchen.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\Kitchen.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\FoodRelations.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\FoodRelations.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\CashManager.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\CashManager.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\Salaries.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\Salaries.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\Settings.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\Settings.g.cs
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\ChangePassword.baml
+D:\Dropbox\مشروع التخرج\final\client\client\obj\x86\Debug\ChangePassword.g.cs

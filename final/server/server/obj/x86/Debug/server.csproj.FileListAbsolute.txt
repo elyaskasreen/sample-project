@@ -1,0 +1,45 @@
+c:\users\elias\documents\visual studio 2010\Projects\final\server\obj\x86\Debug\MainWindow.baml
+c:\users\elias\documents\visual studio 2010\Projects\final\server\obj\x86\Debug\MainWindow.g.cs
+c:\users\elias\documents\visual studio 2010\Projects\final\server\obj\x86\Debug\App.g.cs
+c:\users\elias\documents\visual studio 2010\Projects\final\server\obj\x86\Debug\server_Content.g.cs
+c:\users\elias\documents\visual studio 2010\Projects\final\server\obj\x86\Debug\server_MarkupCompile.cache
+c:\users\elias\documents\visual studio 2010\Projects\final\server\obj\x86\Debug\server.g.resources
+c:\users\elias\documents\visual studio 2010\Projects\final\server\obj\x86\Debug\server.Properties.Resources.resources
+c:\users\elias\documents\visual studio 2010\Projects\final\server\obj\x86\Debug\server.csproj.GenerateResource.Cache
+c:\users\elias\documents\visual studio 2010\Projects\final\server\bin\Debug\Database1.mdf
+c:\users\elias\documents\visual studio 2010\Projects\final\server\bin\Debug\Database1_log.ldf
+c:\users\elias\documents\visual studio 2010\Projects\final\server\bin\Debug\server.exe.config
+c:\users\elias\documents\visual studio 2010\Projects\final\server\bin\Debug\server.exe
+c:\users\elias\documents\visual studio 2010\Projects\final\server\bin\Debug\server.pdb
+c:\users\elias\documents\visual studio 2010\Projects\final\server\obj\x86\Debug\server.exe
+c:\users\elias\documents\visual studio 2010\Projects\final\server\obj\x86\Debug\server.pdb
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\bin\Debug\server.exe.config
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\obj\x86\Debug\server.exe
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\obj\x86\Debug\server.pdb
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\obj\x86\Debug\MainWindow.baml
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\obj\x86\Debug\MainWindow.g.cs
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\obj\x86\Debug\App.g.cs
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\obj\x86\Debug\server_Content.g.cs
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\obj\x86\Debug\server_MarkupCompile.cache
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\obj\x86\Debug\server.g.resources
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\obj\x86\Debug\server.Properties.Resources.resources
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\obj\x86\Debug\server.csproj.GenerateResource.Cache
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\bin\Debug\Database1.mdf
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\bin\Debug\Database1_log.ldf
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\bin\Debug\server.exe
+C:\Users\elias\Documents\Visual Studio 2010\Projects\final\server\server\bin\Debug\server.pdb
+D:\Dropbox\مشروع التخرج\final\server\server\bin\Debug\Database1.mdf
+D:\Dropbox\مشروع التخرج\final\server\server\bin\Debug\Database1_log.ldf
+D:\Dropbox\مشروع التخرج\final\server\server\bin\Debug\server.exe.config
+D:\Dropbox\مشروع التخرج\final\server\server\bin\Debug\server.exe
+D:\Dropbox\مشروع التخرج\final\server\server\bin\Debug\server.pdb
+D:\Dropbox\مشروع التخرج\final\server\server\obj\x86\Debug\MainWindow.baml
+D:\Dropbox\مشروع التخرج\final\server\server\obj\x86\Debug\MainWindow.g.cs
+D:\Dropbox\مشروع التخرج\final\server\server\obj\x86\Debug\App.g.cs
+D:\Dropbox\مشروع التخرج\final\server\server\obj\x86\Debug\server_Content.g.cs
+D:\Dropbox\مشروع التخرج\final\server\server\obj\x86\Debug\server_MarkupCompile.cache
+D:\Dropbox\مشروع التخرج\final\server\server\obj\x86\Debug\server.g.resources
+D:\Dropbox\مشروع التخرج\final\server\server\obj\x86\Debug\server.Properties.Resources.resources
+D:\Dropbox\مشروع التخرج\final\server\server\obj\x86\Debug\server.csproj.GenerateResource.Cache
+D:\Dropbox\مشروع التخرج\final\server\server\obj\x86\Debug\server.exe
+D:\Dropbox\مشروع التخرج\final\server\server\obj\x86\Debug\server.pdb

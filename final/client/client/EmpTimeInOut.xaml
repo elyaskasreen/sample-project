@@ -1,0 +1,12 @@
+﻿<Window x:Class="client.EmpTimeInOut"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EmpTimeInOut" Height="518" Width="549" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ListBox Height="337" HorizontalAlignment="Left" Margin="12,27,0,0" Name="list_in" VerticalAlignment="Top" Width="239" MouseDoubleClick="list_in_MouseDoubleClick" />
+        <ListBox Height="337" HorizontalAlignment="Left" Margin="276,27,0,0" Name="list_out" VerticalAlignment="Top" Width="239" MouseDoubleClick="list_out_MouseDoubleClick" />
+        <TextBox Height="92" HorizontalAlignment="Left" Margin="15,375,0,0" Name="txt_message" VerticalAlignment="Top" Width="500" />
+        <Label Content="Logged In" Height="28" HorizontalAlignment="Left" Margin="96,2,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Logged Out" Height="28" HorizontalAlignment="Left" Margin="362,1,0,0" Name="label2" VerticalAlignment="Top" />
+    </Grid>
+</Window>

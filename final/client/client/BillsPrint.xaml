@@ -1,0 +1,27 @@
+﻿<Window x:Class="client.BillsPrint"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BillsPrint" Height="506" Width="308" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <WrapPanel Height="416"  HorizontalAlignment="Left" Margin="8,8,0,0" Name="wrapPanel1" VerticalAlignment="Top" Width="270">
+            <Label Content="Restaurant Name" Height="28" Name="label1" Width="120"/>
+            <Label Content="Date" Height="28" Name="label2" />
+            <Label Content="date" Height="28" Name="lbl_date" Width="80" />
+            <Label Content="#NUM" Height="28" Name="label4" />
+            <Label Content="Label" Height="28" Name="lbl_num" Width="80"/>
+            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Height="208" Name="dataGrid1" Width="270" Background="{x:Null}" />
+            <Label Content="NetTotla" Height="28" Name="label3" Width="120" />
+            <Label Content="netsum" Height="28" Name="lbl_netsum" Width="120"/>
+            <Label Content="Tax1" Height="28" Name="label5" Width="120"/>
+            <Label Content="tax1" Height="28" Name="lbl_tax1" Width="120"/>
+            <Label Content="Tax2" Height="28" Name="label7" Width="120"/>
+            <Label Content="tax2" Height="28" Name="lbl_tax2" Width="120" />
+            <Label Content="Discount" Height="28" Name="label10" Width="120"/>
+            <Label Content="discount" Height="28" Name="lbl_discount" Width="120" />
+            <Label Content="FinalTotal" Height="28" Name="label6" Width="120"/>
+            <Label Content="sum" Height="28" Name="lbl_sum" Width="120"/>
+        </WrapPanel>
+        <Button Content="Print" Height="23" HorizontalAlignment="Left" Margin="45,430,0,0" Name="btn_print" VerticalAlignment="Top" Width="75" Click="btn_print_Click" />
+        <Button Content="Close" Height="23" HorizontalAlignment="Left" Margin="165,430,0,0" Name="btn_Cancel" VerticalAlignment="Top" Width="75" Click="btn_Cancel_Click" />
+    </Grid>
+</Window>

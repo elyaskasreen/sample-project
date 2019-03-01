@@ -1,0 +1,34 @@
+﻿<Window x:Class="client.Salaries"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Salaries" Height="524" Width="703" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Content="GetSalaries" Height="25" HorizontalAlignment="Left" Margin="227,34,0,0" Name="btn_getSalaries" VerticalAlignment="Top" Width="75" Click="btn_getSalaries_Click" />
+        <GroupBox Header="Employee Salaries" Height="168" HorizontalAlignment="Left" Margin="12,209,0,0" Name="groupBox1" VerticalAlignment="Top" Width="660">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Margin="-0,0,-0,-0" Name="dataGrid1" SelectionChanged="dataGrid1_SelectionChanged" />
+            </Grid>
+        </GroupBox>
+        <DatePicker Height="25" HorizontalAlignment="Left" Name="datePicker1" VerticalAlignment="Top" Width="115" Margin="106,34,0,0" />
+        <Label Content="Choose Month" Height="28" HorizontalAlignment="Left" Margin="18,33,0,0" Name="label1" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="264,180,0,0" Name="txt_netSalary" VerticalAlignment="Top" Width="80" IsEnabled="False" />
+        <Label Content="Net Salary" Height="28" HorizontalAlignment="Left" Margin="264,154,0,0" Name="label2" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="350,180,0,0" Name="txt_bonuse" VerticalAlignment="Top" Width="80" TextChanged="txt_bonuse_TextChanged" />
+        <Label Content="Bonuse" Height="28" HorizontalAlignment="Left" Margin="350,154,0,0" Name="label3" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="436,180,0,0" Name="txt_discount" VerticalAlignment="Top" Width="80" TextChanged="txt_bonuse_TextChanged" />
+        <Label Content="Discount" Height="28" HorizontalAlignment="Left" Margin="436,154,0,0" Name="label4" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="522,180,0,0" Name="txt_totalSalary" VerticalAlignment="Top" Width="80" IsEnabled="False" />
+        <Label Content="Total Salary" Height="28" HorizontalAlignment="Left" Margin="522,154,0,0" Name="label5" VerticalAlignment="Top" />
+        <Label Content="Emp Name" Height="28" HorizontalAlignment="Left" Margin="18,178,0,0" Name="lbl_Name" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="92,180,0,0" Name="txt_empsalary" VerticalAlignment="Top" Width="80" IsEnabled="False" />
+        <Label Content="Emp Salary" Height="28" HorizontalAlignment="Left" Margin="92,154,0,0" Name="label6" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" IsEnabled="True" Margin="178,180,0,0" Name="txt_min" VerticalAlignment="Top" Width="80" TextChanged="txt_bonuse_TextChanged" />
+        <Label Content="Minuts" Height="28" HorizontalAlignment="Left" Margin="178,154,0,0" Name="label7" VerticalAlignment="Top" />
+        <Button Content="Calculate" Height="25" HorizontalAlignment="Left" Margin="609,178,0,0" Name="btn_calculate" VerticalAlignment="Top" Width="57" Click="btn_calculate_Click" />
+        <Button Content="Save selected Permanently" Height="25" HorizontalAlignment="Left" Margin="509,65,0,0" Name="btn_savePerm" VerticalAlignment="Top" Width="157" Click="btn_savePerm_Click" />
+        <Button Content="Save selected Temporary" Height="25" HorizontalAlignment="Left" Margin="509,34,0,0" Name="btn_saveTemp" VerticalAlignment="Top" Width="157" Click="btn_saveTemp_Click" />
+        <GroupBox Header="Status Messeges" Height="96" HorizontalAlignment="Left" Margin="12,377,0,0" Name="groupBox6" VerticalAlignment="Top" Width="654">
+            <TextBox Margin="0,0,0,0" Name="txt_message" />
+        </GroupBox>
+    </Grid>
+</Window>

@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="server.Properties.Settings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.employees" Member="employees">
+    <Type Name="employee">
+      <Column Name="employeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="accountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="empNationalNumber" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="empBirthdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="employmentDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="empSalary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DemissionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="workTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="employee_tempBill" Member="tempBills" ThisKey="employeeID" OtherKey="captainID" Type="tempBill" />
+      <Association Name="employee_bill" Member="bills" ThisKey="employeeID" OtherKey="captainID" Type="bill" />
+      <Association Name="employee_employeesInOut" Member="employeesInOuts" ThisKey="employeeID" OtherKey="employeeID" Type="employeesInOut" />
+      <Association Name="employee_salary" Member="salaries" ThisKey="employeeID" OtherKey="employeeID" Type="salary" />
+      <Association Name="workType_employee" Member="workType" ThisKey="workTypeID" OtherKey="workTypeID" Type="workType" IsForeignKey="true" />
+      <Association Name="account_employee" Member="account" ThisKey="accountID" OtherKey="accountID" Type="account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getloggedin" Member="getloggedins">
+    <Type Name="getloggedin">
+      <Column Name="employeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getloggedout" Member="getloggedouts">
+    <Type Name="getloggedout">
+      <Column Name="employeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.storeHouse" Member="storeHouses">
+    <Type Name="storeHouse">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="primaryMaterialID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="primaryMaterial_storeHouse" Member="primaryMaterial" ThisKey="primaryMaterialID" OtherKey="materialID" Type="primaryMaterial" IsForeignKey="true" />
+      <Association Name="User_storeHouse" Member="User" ThisKey="userID" OtherKey="userID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getstorematerials" Member="getstorematerials">
+    <Type Name="getstorematerial">
+      <Column Name="materialName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="materialID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getTables" Member="getTables">
+    <Type Name="getTable">
+      <Column Name="tempBillID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tableNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="accountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getTableDetails" Member="getTableDetails">
+    <Type Name="getTableDetail">
+      <Column Name="arabicName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempBillID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="served" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tempBillsDetails" Member="tempBillsDetails">
+    <Type Name="tempBillsDetail">
+      <Column Name="tempBillDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tempBillID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="foodID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="served" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tempBill_tempBillsDetail" Member="tempBill" ThisKey="tempBillID" OtherKey="tempBillID" Type="tempBill" IsForeignKey="true" />
+      <Association Name="foodMaterial_tempBillsDetail" Member="foodMaterial" ThisKey="foodID" OtherKey="foodID" Type="foodMaterial" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getcaptains" Member="getcaptains">
+    <Type Name="getcaptain">
+      <Column Name="employeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tempBills" Member="tempBills">
+    <Type Name="tempBill">
+      <Column Name="tempBillID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tableNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="captainID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tempBill_tempBillsDetail" Member="tempBillsDetails" ThisKey="tempBillID" OtherKey="tempBillID" Type="tempBillsDetail" />
+      <Association Name="employee_tempBill" Member="employee" ThisKey="captainID" OtherKey="employeeID" Type="employee" IsForeignKey="true" />
+      <Association Name="User_tempBill" Member="User" ThisKey="userID" OtherKey="userID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.bills" Member="bills">
+    <Type Name="bill">
+      <Column Name="billID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="billFinalValue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tableNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="startdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="enddate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tax1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tax2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="billNetValue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="captainID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="clientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="bill_billDetail" Member="billDetails" ThisKey="billID" OtherKey="billID" Type="billDetail" />
+      <Association Name="employee_bill" Member="employee" ThisKey="captainID" OtherKey="employeeID" Type="employee" IsForeignKey="true" />
+      <Association Name="account_bill" Member="account" ThisKey="clientID" OtherKey="accountID" Type="account" IsForeignKey="true" />
+      <Association Name="User_bill" Member="User" ThisKey="userID" OtherKey="userID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.billDetails" Member="billDetails">
+    <Type Name="billDetail">
+      <Column Name="detailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="billID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="foodID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="bill_billDetail" Member="bill" ThisKey="billID" OtherKey="billID" Type="bill" IsForeignKey="true" />
+      <Association Name="foodMaterial_billDetail" Member="foodMaterial" ThisKey="foodID" OtherKey="foodID" Type="foodMaterial" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getbilldetails" Member="getbilldetails">
+    <Type Name="getbilldetail">
+      <Column Name="arabicName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="billID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.workType" Member="workTypes">
+    <Type Name="workType">
+      <Column Name="workTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="workType" Member="workType1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="workType_employee" Member="employees" ThisKey="workTypeID" OtherKey="workTypeID" Type="employee" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getKitchenFood" Member="getKitchenFoods">
+    <Type Name="getKitchenFood">
+      <Column Name="tempBillDetailID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tableNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="arabicName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="served" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GetPMaterial" Member="GetPMaterials">
+    <Type Name="GetPMaterial">
+      <Column Name="materialID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="materialName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="unitName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GetFoodMenu" Member="GetFoodMenus">
+    <Type Name="GetFoodMenu">
+      <Column Name="foodID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="arabicName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="unitName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.foodMaterialRelation" Member="foodMaterialRelations">
+    <Type Name="foodMaterialRelation">
+      <Column Name="relationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="foodMaterialID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="primaryMaterialID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="Decimal(4,2) NOT NULL" CanBeNull="false" />
+      <Association Name="foodMaterial_foodMaterialRelation" Member="foodMaterial" ThisKey="foodMaterialID" OtherKey="foodID" Type="foodMaterial" IsForeignKey="true" />
+      <Association Name="primaryMaterial_foodMaterialRelation" Member="primaryMaterial" ThisKey="primaryMaterialID" OtherKey="materialID" Type="primaryMaterial" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getRelations" Member="getRelations">
+    <Type Name="getRelation">
+      <Column Name="relationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="foodMaterialID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="materialName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="unitName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="Decimal(4,2) NOT NULL" CanBeNull="false" />
+      <Column Name="SUM" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.countingUnit" Member="countingUnits">
+    <Type Name="countingUnit">
+      <Column Name="unitID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="unitName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="countingUnit_foodMaterial" Member="foodMaterials" ThisKey="unitID" OtherKey="unitID" Type="foodMaterial" />
+      <Association Name="countingUnit_primaryMaterial" Member="primaryMaterials" ThisKey="unitID" OtherKey="countUnitID" Type="primaryMaterial" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getoldbills" Member="getoldbills">
+    <Type Name="getoldbill">
+      <Column Name="billID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="billFinalValue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tableNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="startdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="enddate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tax1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tax2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="billNetValue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="captain" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="client" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="captainID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cashMoney" Member="cashMoneys">
+    <Type Name="cashMoney">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="in_money" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="out_money" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="explanation" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="transferTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="transferType_cashMoney" Member="transferType" ThisKey="transferTypeID" OtherKey="transferTypeID" Type="transferType" IsForeignKey="true" />
+      <Association Name="account_cashMoney" Member="account" ThisKey="accountID" OtherKey="accountID" Type="account" IsForeignKey="true" />
+      <Association Name="User_cashMoney" Member="User" ThisKey="userID" OtherKey="userID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getCashMoney" Member="getCashMoneys">
+    <Type Name="getCashMoney">
+      <Column Name="in_money" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="out_money" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="explanation" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="transferType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="transferTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.transferType" Member="transferTypes">
+    <Type Name="transferType">
+      <Column Name="transferTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="transferType" Member="transferType1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="transferType_cashMoney" Member="cashMoneys" ThisKey="transferTypeID" OtherKey="transferTypeID" Type="cashMoney" />
+    </Type>
+  </Table>
+  <Table Name="dbo.employeesInOut" Member="employeesInOuts">
+    <Type Name="employeesInOut">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="employeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="timeIn" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="timeOut" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="employee_employeesInOut" Member="employee" ThisKey="employeeID" OtherKey="employeeID" Type="employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.salarys" Member="salaries">
+    <Type Name="salary">
+      <Column Name="salaryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="employeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="monthNUM" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="netSalary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="minuts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bonuses" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalSalary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="transferred" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="employee_salary" Member="employee" ThisKey="employeeID" OtherKey="employeeID" Type="employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getSavedSalary" Member="getSavedSalaries">
+    <Type Name="getSavedSalary">
+      <Column Name="salaryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="netSalary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="minuts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bonuses" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalSalary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="transferred" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="accountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="employeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="empSalary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="monthNUM" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getSalary" Member="getSalaries">
+    <Type Name="getSalary">
+      <Column Name="accountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="mi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="empSalary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.accounts" Member="accounts">
+    <Type Name="account">
+      <Column Name="accountID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="accountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="account_employee" Member="employees" ThisKey="accountID" OtherKey="accountID" Type="employee" />
+      <Association Name="account_bill" Member="bills" ThisKey="accountID" OtherKey="clientID" Type="bill" />
+      <Association Name="account_cashMoney" Member="cashMoneys" ThisKey="accountID" OtherKey="accountID" Type="cashMoney" />
+    </Type>
+  </Table>
+  <Table Name="dbo.foodMaterial" Member="foodMaterials">
+    <Type Name="foodMaterial">
+      <Column Name="foodID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="parentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="arabicName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="englishName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="unitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isAParent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="foodMaterial_tempBillsDetail" Member="tempBillsDetails" ThisKey="foodID" OtherKey="foodID" Type="tempBillsDetail" />
+      <Association Name="foodMaterial_billDetail" Member="billDetails" ThisKey="foodID" OtherKey="foodID" Type="billDetail" />
+      <Association Name="foodMaterial_foodMaterialRelation" Member="foodMaterialRelations" ThisKey="foodID" OtherKey="foodMaterialID" Type="foodMaterialRelation" />
+      <Association Name="countingUnit_foodMaterial" Member="countingUnit" ThisKey="unitID" OtherKey="unitID" Type="countingUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.primaryMaterials" Member="primaryMaterials">
+    <Type Name="primaryMaterial">
+      <Column Name="materialID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="materialName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="countUnitID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lastPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="primaryMaterial_storeHouse" Member="storeHouses" ThisKey="materialID" OtherKey="primaryMaterialID" Type="storeHouse" />
+      <Association Name="primaryMaterial_foodMaterialRelation" Member="foodMaterialRelations" ThisKey="materialID" OtherKey="primaryMaterialID" Type="foodMaterialRelation" />
+      <Association Name="countingUnit_primaryMaterial" Member="countingUnit" ThisKey="countUnitID" OtherKey="unitID" Type="countingUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="passwordMD5" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Permissions" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_storeHouse" Member="storeHouses" ThisKey="userID" OtherKey="userID" Type="storeHouse" />
+      <Association Name="User_tempBill" Member="tempBills" ThisKey="userID" OtherKey="userID" Type="tempBill" />
+      <Association Name="User_bill" Member="bills" ThisKey="userID" OtherKey="userID" Type="bill" />
+      <Association Name="User_cashMoney" Member="cashMoneys" ThisKey="userID" OtherKey="userID" Type="cashMoney" />
+      <Association Name="Permission_User" Member="Permission" ThisKey="Permissions" OtherKey="permissionsID" Type="Permission" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getUsers" Member="getUsers">
+    <Type Name="getUser">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="permissionsID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="permissionName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Permissions" Member="Permissions">
+    <Type Name="Permission">
+      <Column Name="permissionsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="permissionName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="bills" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="oldBills" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="store" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="empSettings" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="empTineInOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="kitchen" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="foodRelations" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="salaries" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="settings" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="changePass" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cashManager" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Permission_User" Member="Users" ThisKey="permissionsID" OtherKey="Permissions" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getPermissions" Member="getPermissions">
+    <Type Name="getPermission">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bills" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="oldBills" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="store" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="empSettings" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="empTineInOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="kitchen" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="foodRelations" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="salaries" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="settings" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="changePass" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cashManager" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.inventoryByBills" Member="inventoryByBills">
+    <Type Name="inventoryByBill">
+      <Column Name="materialID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="materialName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="bills" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Pamount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Namount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getTableDetail_notMinus" Member="getTableDetail_notMinus">
+    <Type Name="getTableDetail_notMinus">
+      <Column Name="tempBillID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="foodID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.getBillToPrint" Member="getBillToPrints">
+    <Type Name="getBillToPrint">
+      <Column Name="billID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="arabicName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
