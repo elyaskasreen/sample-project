@@ -40,7 +40,7 @@ namespace server
                 {
                     CT[i] = new connectThread();//constructing the connection thread
                 }
-                while (true)//non finshing loop to keep the server working all the time
+                while (true)//non finishing loop to keep the server working all the time
                 {
                     if (CT[clientscount].connect == false)//a loop to search the array of threads for offline connection
                     {

@@ -27,7 +27,7 @@ namespace server
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //running connection(runServer) in anther thread
+            //running connection(runServer) in another thread
             runServer runserver = new runServer(this);
             Thread server = new Thread(runserver.run) { IsBackground = true };
             server.Start();
